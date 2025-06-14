@@ -1,0 +1,109 @@
+*** classes/obj needed ***
+================
+
+**Person**:
+--------------------------
+->name
+->address~~>private
+->phone~~>private
+--------------------------
+**Customer**
+--------------------------
+->ID
+->list of accounts
+
+~>add
+~>remove
+--------------------------
+**Account**
+--------------------------
+->acc number (string genrated randomly)
+->balance~~>private
+->Transeactions (type, amount, data)
+
+~>deposit(), withdraw() (instance methods),
+~>display_transactions() (use list comprehensions to filter),
+~>__str__() (special method for account summary),
+~>Static method validate_account_number(),
+~>Class method create_account().
+--------------------------
+**Bank**
+--------------------------
+->Customers
+->Accounts (acc number, account
+
+~>add customer
+~>del customer
+~>search
+~>total bala
+~>save_to/load_from file 
+===========================
+*** Core Functionality***
+===========================
+*File Handling*
+----------------------------
+--->Store customer/account data in a .txt or .csv file.
+--->Use loops to read/write data line-by-line.
+----------------------------
+Transactions:
+----------------------------
+---->Represent each transaction as a tuple (e.g., ("Deposit", 500, "2023-10-01")).
+---->Use list comprehensions to filter transactions (e.g., withdrawals only).
+----------------------------
+Validation:
+----------------------------
+---->Check for invalid inputs (e.g., negative deposit amounts) using conditional statements.
+----------------------------
+    Menu System:
+----------------------------
+---->Use a while loop to display options (e.g., "1. Create Account", "2. Deposit").
+===========================
+3. Key Concepts to Integrate
+===========================
+**Inheritance**
+->SavingsAccount and CheckingAccount classes inheriting from Account.
+->Operator Overloading:
+->Use __add__ to combine balances (if needed).
+
+**Special Methods**:
+->__repr__ for debugging, __len__ for transaction count.
+
+**Static/Class Methods**
+->Customer.generate_customer_id() (class method),
+->Account.validate_balance() (static method).
+
+===========================
+4. Example Workflow
+===========================
+
+**Create a Customer:**
+->Initialize a Person, then a Customer with a unique ID.
+
+**Create an Account:**
+->Use Account.create_account() with initial balance.
+
+**Deposit/Withdraw:**
+->Update balance and append to transactions list.
+
+**Save Data:**
+->Serialize objects and save to a file using the Bank class.
+
+===========================
+5. File Structure
+===========================
+
+# File: bank_data.txt
+# Format:
+Customer ID, Name, Address, Phone  
+Account Number, Balance, Account Type, Transaction History...
+
+
+===========================
+6. Advanced Features (Optional)
+===========================
+->Use sets to track unique customer IDs.
+->Map transaction types to emojis/icons (e.g., "Deposit" → 💵).
+->Filter accounts with low balances.
+
+
+
