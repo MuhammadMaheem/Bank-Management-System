@@ -1,19 +1,13 @@
 import sys
 import os
-
-# Add the root directory of the project to Python path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
-
 import streamlit as st
 from verification import verification
-from print import Print  # We'll replace CLI print_menu with Streamlit UI
 from customer import Customer
 from createadmin import Admin
 from pin import updating_pin
 from account import Account
-
 import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 
 # Load customers

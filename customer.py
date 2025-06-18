@@ -1,6 +1,5 @@
 from person import Person
 from account import Account
-import time
 from datetime import datetime
 import pandas as pd
 import streamlit as st
@@ -29,10 +28,7 @@ class Customer(Person):
             if new_account.account_number not in existing_account_numbers:
                 self.accounts.append(new_account)
                 self.save_accounts()  # Save accounts after adding a new one
-                print(f"✅ Account {new_account.account_number} added successfully.")
                 break
-            else:
-                print(f"❌ Account number {new_account.account_number} already exists. Generating a new one.")
     def remove_account(self, account_number):
         # Remove from in-memory list
         self.accounts = [acc for acc in self.accounts if acc.account_number != account_number]

@@ -1,4 +1,3 @@
-from print import Print
 
 def verification(username, password, role):
     filename = "data/admin.txt" if role == "admin" else "data/user.txt"
@@ -48,6 +47,3 @@ def main_verify():
         else:
             print("Invalid choice")
             continue
-
-        if role:
-            Print.print_menu(role, userID)
