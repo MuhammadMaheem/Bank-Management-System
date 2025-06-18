@@ -1,11 +1,11 @@
 import sys
 import os
 import streamlit as st
-from verification import verification
-from customer import Customer
-from createadmin import Admin
-from pin import updating_pin
-from account import Account
+from Verification.verification import verification
+from Customer.customer import Customer
+from Admin.createadmin import Admin
+from Pin.pin import updating_pin
+from Account.account import Account
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 

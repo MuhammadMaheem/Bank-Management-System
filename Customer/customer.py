@@ -1,5 +1,5 @@
-from person import Person
-from account import Account
+from Person.person import Person
+from Account.account import Account
 from datetime import datetime
 import pandas as pd
 import streamlit as st
