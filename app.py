@@ -17,20 +17,21 @@ if "logged_in" not in st.session_state:
     st.session_state.role = None
 
 # Authentication Navigation
-
 def login():
     with st.sidebar:
         st.title("🔐 Login")
-        role = st.radio("Login as", ("Admin", "User"))
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
+        
         if st.button("Login"):
-            from Verification.verification import verification
-            if verification(username, password, role.lower()):
+            from components.auth import verification
+            role = verification(username, password)
+
+            if role:  # If not None
                 st.session_state.logged_in = True
                 st.session_state.user = username
-                st.session_state.role = role.lower()
-                st.success("✅ Login successful")
+                st.session_state.role = role  # Now includes 'admin' or 'user'
+                st.success(f"✅ Login successful as {role.capitalize()}")
                 st.rerun()
             else:
                 st.error("❌ Invalid credentials")

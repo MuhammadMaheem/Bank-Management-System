@@ -9,8 +9,8 @@ class Admin(Person):
             print("❌ Name cannot be empty.")
             return
             
-        with open("admin.txt", "a") as file:
-            file.write(f"{self.name},{self.pin}\n")
+        with open("data/users.txt", "a") as file:
+            file.write(f"{self.name},{self.pin},{"admin"}\n")
         print(f"Admin {self.name} created successfully.")
 
     

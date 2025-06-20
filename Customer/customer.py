@@ -81,8 +81,8 @@ class Customer(Person):
 
         # ----- Check if user ID already exists in data/user.txt -----
         user_exists = False
-        if os.path.exists("data/user.txt"):
-            with open("data/user.txt", "r") as file:
+        if os.path.exists("data/users.txt"):
+            with open("data/users.txt", "r") as file:
                 for line in file:
                     fields = line.strip().split(",")
                     if fields and fields[0].strip() == self.ID:
@@ -90,11 +90,11 @@ class Customer(Person):
                         break
 
         if not user_exists:
-            with open("data/user.txt", "a") as file:
-                file.write(f"{self.ID},0000\n")
+            with open("data/users.txt", "a") as file:
+                file.write(f"{self.ID},0000,user\n")
             print(f"✅ User {self.name} saved successfully.")
         else:
-            print(f"⚠️ User ID {self.ID} already exists in data/user.txt. Skipping save.")
+            print(f"⚠️ User ID {self.ID} already exists in data/users.txt. Skipping save.")
 
 
     def load_customer(self):
